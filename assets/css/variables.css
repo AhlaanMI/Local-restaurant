@@ -1,0 +1,41 @@
+:root {
+  /* Brand palette — warm, food-focused */
+  --color-primary: #b23a1f;
+  --color-primary-strong: #8f2d17;
+  --color-secondary: #f29f05;
+  --color-accent: #d67d3e;
+  --color-bg: #fff9f3;
+  --color-surface: #ffffff;
+  --color-text: #2f1c14;
+  --color-text-soft: #5c4336;
+  --color-border: #ead7c8;
+  --color-muted: #fff3e6;
+
+  /* Typography */
+  --font-family-heading: "Playfair Display", "Times New Roman", serif;
+  --font-family-base: "Poppins", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-size-root: 17px;
+  --line-height-base: 1.7;
+  --letter-spacing-base: 0.01em;
+
+  /* Layout scale */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Radius and shadows */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.6rem;
+  --radius-lg: 1rem;
+  --shadow-soft: 0 12px 36px rgba(47, 28, 20, 0.12);
+  --shadow-strong: 0 24px 48px rgba(47, 28, 20, 0.16);
+
+  /* Component sizing */
+  --container-width: 1100px;
+  --nav-height: 72px;
+}
