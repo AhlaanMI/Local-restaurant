@@ -5,6 +5,61 @@
     yearEl.textContent = new Date().getFullYear();
   }
 
+  const root = document.documentElement;
+  const themeToggle = document.querySelector("[data-theme-toggle]");
+  const themeLabel = themeToggle?.querySelector("[data-theme-label]");
+  const themeKey = "cgk-theme";
+
+  const applyTheme = (theme) => {
+    root.setAttribute("data-theme", theme);
+    if (themeToggle) {
+      themeToggle.setAttribute(
+        "aria-pressed",
+        theme === "dark" ? "true" : "false"
+      );
+    }
+    if (themeLabel) {
+      themeLabel.textContent = theme === "dark" ? "Light mode" : "Dark mode";
+    }
+  };
+
+  const getStoredTheme = () => window.localStorage.getItem(themeKey);
+  const getPreferredTheme = () =>
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+
+  const initTheme = () => {
+    const stored = getStoredTheme();
+    const theme = stored || getPreferredTheme();
+    applyTheme(theme);
+    if (!stored) {
+      window.localStorage.setItem(themeKey, theme);
+    }
+  };
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const current = root.getAttribute("data-theme") || getPreferredTheme();
+      const next = current === "dark" ? "light" : "dark";
+      applyTheme(next);
+      window.localStorage.setItem(themeKey, next);
+    });
+  }
+
+  if (window.matchMedia) {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleChange = (event) => {
+      if (!getStoredTheme()) {
+        applyTheme(event.matches ? "dark" : "light");
+      }
+    };
+    mediaQuery.addEventListener("change", handleChange);
+  }
+
+  initTheme();
+
   // Smooth scrolling for on-page anchors.
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
   anchorLinks.forEach((link) => {
@@ -40,7 +95,7 @@
       // Avoid multiple timers.
       if (timerId) window.clearInterval(timerId);
       if (slides.length > 1) {
-        timerId = window.setInterval(() => goTo(currentIndex + 1), 3000);
+        timerId = window.setInterval(() => goTo(currentIndex + 1), 3600);
       }
     };
 

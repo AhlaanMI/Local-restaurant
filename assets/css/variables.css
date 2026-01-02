@@ -1,41 +1,117 @@
-:root {
-  /* Brand palette — warm, food-focused */
-  --color-primary: #b23a1f;
-  --color-primary-strong: #8f2d17;
-  --color-secondary: #f29f05;
-  --color-accent: #d67d3e;
-  --color-bg: #fff9f3;
-  --color-surface: #ffffff;
-  --color-text: #2f1c14;
-  --color-text-soft: #5c4336;
-  --color-border: #ead7c8;
-  --color-muted: #fff3e6;
+:root,
+[data-theme="light"] {
+  /* Brand palette */
+  --brand-500: #cf5c2a;
+  --brand-600: #b54f24;
+  --brand-700: #963f1c;
+  --accent-500: #3fa7d6;
+
+  /* Neutral system */
+  --gray-50: #f7f4ee;
+  --gray-100: #efe9e1;
+  --gray-200: #e4dbcf;
+  --gray-300: #d7cbbd;
+  --gray-500: #7a695c;
+  --gray-700: #3a3029;
+  --gray-900: #1f1713;
+
+  /* Semantic surfaces */
+  --surface-1: #ffffff;
+  --surface-2: #f9f6f1;
+  --surface-3: rgba(255, 255, 255, 0.85);
+
+  /* Text and lines */
+  --text-strong: var(--gray-900);
+  --text: #2b201b;
+  --text-soft: #55453b;
+  --border-soft: rgba(58, 48, 41, 0.12);
+  --border-strong: rgba(58, 48, 41, 0.2);
+
+  /* Backgrounds */
+  --page-bg: radial-gradient(
+      circle at 10% 20%,
+      rgba(207, 92, 42, 0.06),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(63, 167, 214, 0.07),
+      transparent 22%
+    ),
+    var(--surface-2);
 
   /* Typography */
   --font-family-heading: "Playfair Display", "Times New Roman", serif;
   --font-family-base: "Poppins", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  --font-size-root: 17px;
-  --line-height-base: 1.7;
+  --font-size-root: clamp(15px, 0.35vw + 14px, 17px);
+  --line-height-base: 1.65;
   --letter-spacing-base: 0.01em;
 
   /* Layout scale */
-  --space-2xs: 0.25rem;
-  --space-xs: 0.5rem;
-  --space-sm: 0.75rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
-  --space-3xl: 4rem;
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.25rem;
+  --space-lg: 1.75rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 3.5rem;
+  --space-3xl: 4.5rem;
 
   /* Radius and shadows */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.6rem;
-  --radius-lg: 1rem;
-  --shadow-soft: 0 12px 36px rgba(47, 28, 20, 0.12);
-  --shadow-strong: 0 24px 48px rgba(47, 28, 20, 0.16);
+  --radius-sm: 0.4rem;
+  --radius-md: 0.65rem;
+  --radius-lg: 1.1rem;
+  --radius-full: 999px;
+  --shadow-soft: 0 12px 36px rgba(15, 12, 10, 0.12);
+  --shadow-strong: 0 20px 48px rgba(15, 12, 10, 0.18);
+
+  /* Motion */
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 140ms;
+  --duration-base: 220ms;
 
   /* Component sizing */
-  --container-width: 1100px;
-  --nav-height: 72px;
+  --container-width: 1180px;
+  --nav-height: 76px;
+}
+
+[data-theme="dark"] {
+  --brand-500: #f28e52;
+  --brand-600: #e67844;
+  --brand-700: #cf612c;
+  --accent-500: #5cc2f0;
+
+  --gray-50: #0f1215;
+  --gray-100: #191f24;
+  --gray-200: #222a30;
+  --gray-300: #2c353d;
+  --gray-500: #a6b0ba;
+  --gray-700: #c7d0d8;
+  --gray-900: #e3e8ec;
+
+  --surface-1: #12171c;
+  --surface-2: #161c22;
+  --surface-3: rgba(22, 28, 34, 0.82);
+
+  --text-strong: #f2f4f7;
+  --text: #e3e7eb;
+  --text-soft: #cbd3dc;
+  --border-soft: rgba(227, 231, 235, 0.14);
+  --border-strong: rgba(227, 231, 235, 0.28);
+
+  --page-bg: radial-gradient(
+      circle at 12% 20%,
+      rgba(242, 142, 82, 0.1),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(92, 194, 240, 0.12),
+      transparent 24%
+    ),
+    #0c1014;
+
+  --shadow-soft: 0 12px 34px rgba(0, 0, 0, 0.35);
+  --shadow-strong: 0 20px 52px rgba(0, 0, 0, 0.45);
 }
